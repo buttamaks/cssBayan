@@ -1,0 +1,62 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.accordion {
+    margin: 0 auto;
+    max-width: 700px;
+    font-family: 'Roboto', sans-serif;
+    color: blue;
+}
+
+.accordion:hover{
+    color: black;
+}
+
+.acc_label,
+.acc_content {
+    padding: 15px 25px;
+}
+
+.acc_label {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s;
+}
+/* .acc_label:hover {
+
+} */
+
+.acc_label::after {
+    content: "+";
+    position: absolute;
+    top: 23%;
+    right: 25px;
+    font-size: 1.5em;
+    transition: transform 0.3s;
+}
+
+.acc_content {
+    display: none;
+}
+
+.acc_accordion:hover ~ .acc_content {
+    display: block;
+}
+
+.acc_input {
+    display: none;
+}
+.acc_input:checked ~ .acc_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.acc_input:hover ~ .acc_label::after {
+    transform: translateY(0) rotate(45deg);
+}
