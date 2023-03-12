@@ -33,6 +33,7 @@ html {
 } */
 
 .acc_label::after {
+    display: none;
     content: "+";
     position: absolute;
     top: 23%;
@@ -41,8 +42,13 @@ html {
     transition: transform 0.3s;
 }
 
+.acc_label:hover::after {
+    display: block;
+}
+
 .acc_content {
     display: none;
+    transition: all 0.5s;
 }
 
 .acc_accordion:hover ~ .acc_content {
@@ -57,6 +63,12 @@ html {
     justify-content: center;
     align-items: center;
 }
-.acc_input:hover ~ .acc_label::after {
+.acc_input:checked ~ .acc_label::after {
     transform: translateY(0) rotate(135deg);
+}
+
+.acc_input:hover ~ .acc_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
