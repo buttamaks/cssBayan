@@ -58,5 +58,5 @@ html {
     align-items: center;
 }
 .acc_input:hover ~ .acc_label::after {
-    transform: translateY(0) rotate(45deg);
+    transform: translateY(0) rotate(135deg);
 }
